@@ -12,7 +12,7 @@ export default class App extends React.Component {
 
     this.reset = this.reset.bind(this);
     this.multiplicar = this.multiplicar.bind(this);
-
+    this.cuadrado = this.cuadrado.bind(this);
   }
 
   // Completar la logica para cada uno de los métodos de este componente de clase
@@ -52,7 +52,11 @@ export default class App extends React.Component {
   }
 
   cuadrado() {
+    let contador = this.state.contador;
 
+    contador = contador*contador;
+
+    this.setState({contador:contador});
   }
 
   render() {
@@ -63,10 +67,10 @@ export default class App extends React.Component {
           <h1 className="count">{this.state.contador}</h1>
           {/* Llamar a los métodos para cada uno de los botones */}
           <div className="App">
-            <div className="btn btn-prev" onClick={this.disminuir}>-</div>
-            <div className="btn btn-next" onClick={this.aumentar}>+</div>
-            <div className="btn btn-next" onClick={this.multiplicar}>Multiplicar</div>
-            <div className="btn btn-next">^2</div>
+            <div className="btn btn-prev"  onClick={this.disminuir}>-</div>
+            <div className="btn btn-next"  onClick={this.aumentar}>+</div>
+            <div className="btn btn-next"  onClick={this.multiplicar}>Multiplicar</div>
+            <div className="btn btn-next"  onClick={this.cuadrado}>^2</div>
             <div className="btn btn-reset" onClick={this.reset}>RESET</div>
           </div>
         </div>
