@@ -11,6 +11,7 @@ export default class App extends React.Component {
     };
 
     this.reset = this.reset.bind(this);
+    this.multiplicar = this.multiplicar.bind(this);
 
   }
 
@@ -38,7 +39,16 @@ export default class App extends React.Component {
   }
 
   multiplicar() {
+    let contador = this.state.contador;
 
+    if(contador%2===0)
+    {
+      contador = contador*2;
+    }else {
+      contador = contador*3;
+    }
+
+    this.setState({contador:contador})
   }
 
   cuadrado() {
@@ -55,7 +65,7 @@ export default class App extends React.Component {
           <div className="App">
             <div className="btn btn-prev" onClick={this.disminuir}>-</div>
             <div className="btn btn-next" onClick={this.aumentar}>+</div>
-            <div className="btn btn-next">Multiplicar</div>
+            <div className="btn btn-next" onClick={this.multiplicar}>Multiplicar</div>
             <div className="btn btn-next">^2</div>
             <div className="btn btn-reset" onClick={this.reset}>RESET</div>
           </div>
