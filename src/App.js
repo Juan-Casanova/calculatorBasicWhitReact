@@ -3,10 +3,15 @@ import "./styles.css";
 
 export default class App extends React.Component {
   constructor() {
+    
     super();
+    
     this.state = {
       contador: 0
     };
+
+    this.reset = this.reset.bind(this);
+
   }
 
   // Completar la logica para cada uno de los métodos de este componente de clase
@@ -29,7 +34,7 @@ export default class App extends React.Component {
   }
 
   reset() {
-    
+    this.setState({contador:0})
   }
 
   multiplicar() {
@@ -52,7 +57,7 @@ export default class App extends React.Component {
             <div className="btn btn-next" onClick={this.aumentar}>+</div>
             <div className="btn btn-next">Multiplicar</div>
             <div className="btn btn-next">^2</div>
-            <div className="btn btn-reset">RESET</div>
+            <div className="btn btn-reset" onClick={this.reset}>RESET</div>
           </div>
         </div>
       </div>
